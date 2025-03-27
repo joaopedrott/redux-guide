@@ -19,7 +19,7 @@ function Header() {
     setCartIsVisible(true);
   };
 
-  const handleLoginClick = () => {//achao de login
+  const handleLoginClick = () => {//acao de login
     dispatch({ type: "user/login",
       payload: {
         name: "joao",
