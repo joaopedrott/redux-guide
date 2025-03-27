@@ -24,6 +24,7 @@ function Header() {
       payload: {
         name: "joao",
         email: "joao@gmail.com",
+        password: "123456",
       }
      });
   };
