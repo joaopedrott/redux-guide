@@ -9,16 +9,17 @@ import * as Styles from "./styles";
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
+  //useSelector é para pegar o estado do reducer ou pegar um valor do estado do reducer
   const { currentUser } = useSelector(rootReducer => rootReducer.userReducer);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();//para mandar uma acao com dados para o reducer
 
-  console.log({currentUser});
+  console.log({currentUser});//para teste
 
   const handleCartClick = () => {
     setCartIsVisible(true);
   };
 
-  const handleLoginClick = () => {
+  const handleLoginClick = () => {//achao de login
     dispatch({ type: "user/login",
       payload: {
         name: "joao",
