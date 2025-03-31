@@ -1,36 +1,25 @@
+import { UserActionTypes } from "./action-types";
+
 const initialState = {
     currentUser: null, // Pode armazenar o nome do usuário ou null
 };
 
 const userReducer = (state = initialState, action) => {
-    if(action.type==='user/login') {
-        return {
-            ...state,
-            currentUser: action.payload, // Armazena apenas o `name` do usuário
-        };
-    } else if (action.type==='user/logout') {
-        return {
-            ...state,
-            currentUser:null, // Reseta o usuário para null no logout
-        }
-    } else {
-        return state;
-    }
-
-/*     switch (action.type) {
-        case 'user/login':
+    switch (action.type) {
+        case UserActionTypes.LOGIN:
             return {
                 ...state,
                 currentUser: action.payload.name, // Armazena apenas o `name` do usuário
             };
-        case 'user/logout':
+        case UserActionTypes.LOGOUT:
             return {
                 ...state,
                 currentUser: null, // Reseta o usuário para null no logout
             };
         default:
             return state;
-    } */
+
+    }
 };
 
 export default userReducer;
