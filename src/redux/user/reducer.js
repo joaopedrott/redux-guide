@@ -9,7 +9,7 @@ const userReducer = (state = initialState, action) => {
         case UserActionTypes.LOGIN:
             return {
                 ...state,
-                currentUser: action.payload.name, // Armazena apenas o `name` do usuário
+                currentUser: action.payload, // Armazena apenas o `name` do usuário
             };
         case UserActionTypes.LOGOUT:
             return {
