@@ -20,6 +20,14 @@ const cartReducer = (state= initialState, action)=> {
 
             //se ele não existir, adicionar o produto no carrinho
             return{...state, products: [...state.products, {...action.payload, quantity: 1}]};
+
+            case CartActionnTypes.REMOVE_PRODUCT:
+                return {
+                    ...state,
+                    products: state.products.filter(product => product.id !==action.payload),
+                }
+
+
         default:
         return state;
     }
